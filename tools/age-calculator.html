@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Age Calculator — Toolbox</title>
+<meta name="description" content="Calculate exact age in years, months and days from a birth date.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>:root{ --accent: var(--bin-age); }</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark" aria-hidden="true"></span>Toolbox</a>
+    <nav class="site-nav" aria-label="Primary"><a href="../index.html#tools">All tools</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap tool-hero">
+    <a class="back-link" href="../index.html">&larr; Back to the board</a>
+    <p class="bin-tag" style="margin-top:14px;">Bin 04 &middot; Everyday</p>
+    <h1 class="display display--sm">Age Calculator</h1>
+    <p class="lede">Pick a birth date and an as-of date to get an exact age, plus a few fun totals.</p>
+  </section>
+
+  <section class="wrap tool-body">
+    <div class="tool-grid">
+      <div class="panel">
+        <div class="field">
+          <label for="birthDate">Date of birth</label>
+          <input type="date" id="birthDate">
+        </div>
+        <div class="field">
+          <label for="asOfDate">Calculate age as of</label>
+          <input type="date" id="asOfDate">
+        </div>
+        <button class="btn btn--accent" id="calcBtn" style="width:100%;">Calculate age</button>
+        <p class="hint" id="errorMsg" style="color:var(--bin-age);"></p>
+      </div>
+
+      <div class="panel">
+        <div class="stat-hero">
+          <div class="stat-value" id="mainStat">—</div>
+          <div class="stat-label" id="mainLabel">years old</div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-tile"><div class="n" id="statMonths">—</div><div class="l">Total months</div></div>
+          <div class="stat-tile"><div class="n" id="statWeeks">—</div><div class="l">Total weeks</div></div>
+          <div class="stat-tile"><div class="n" id="statDays">—</div><div class="l">Total days</div></div>
+        </div>
+        <p class="hint" id="nextBirthday" style="text-align:center;margin-top:18px;"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p>Toolbox &middot; Age Calculator runs entirely in your browser.</p></div>
+</footer>
+
+<script src="../assets/js/age-calculator.js" defer></script>
+</body>
+</html>

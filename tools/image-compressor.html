@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Compressor — Toolbox</title>
+<meta name="description" content="Compress JPG, PNG and WebP images right in your browser. Free, private, no uploads.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>:root{ --accent: var(--bin-image); }</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark" aria-hidden="true"></span>Toolbox</a>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="../index.html#tools">All tools</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap tool-hero">
+    <a class="back-link" href="../index.html">&larr; Back to the board</a>
+    <p class="bin-tag" style="margin-top:14px;">Bin 01 &middot; Media</p>
+    <h1 class="display display--sm">Image Compressor</h1>
+    <p class="lede">Drop images on the press, set the pressure, download files that load fast. Nothing is uploaded — the compression happens on your device.</p>
+  </section>
+
+  <section class="wrap tool-body">
+    <div class="tool-grid">
+
+      <div>
+        <div class="drop-zone" id="dropZone" tabindex="0" role="button" aria-label="Drop images here or press to browse files">
+          <input type="file" id="fileInput" accept="image/png, image/jpeg, image/webp" multiple hidden>
+          <svg class="press-illustration" viewBox="0 0 320 220" aria-hidden="true">
+            <rect id="plateTop" x="60" y="30" width="200" height="20" rx="3" fill="var(--ink)"/>
+            <rect id="plateBottom" x="60" y="170" width="200" height="20" rx="3" fill="var(--ink)"/>
+            <rect x="66" y="50" width="8" height="120" fill="var(--ink)" opacity="0.35"/>
+            <rect x="246" y="50" width="8" height="120" fill="var(--ink)" opacity="0.35"/>
+            <rect id="pressBlock" x="110" y="80" width="100" height="60" rx="4" fill="var(--accent)"/>
+            <text id="pressLabel" x="160" y="115" text-anchor="middle" class="press-text">IMG</text>
+          </svg>
+          <p class="drop-label">
+            <strong>Drop images here</strong>
+            <span>or click to browse — JPG, PNG, WebP</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="control-row">
+          <label for="quality">Pressure <span id="qualityValue">75</span>%</label>
+          <input type="range" id="quality" min="10" max="95" value="75" step="1">
+          <p class="hint">Lower pressure = smaller file, more compression artefacts.</p>
+        </div>
+        <div class="control-row control-row--split">
+          <div class="field">
+            <label for="format">Output format</label>
+            <select id="format">
+              <option value="auto">Auto — smallest file (recommended)</option>
+              <option value="webp">WebP</option>
+              <option value="jpeg">JPEG</option>
+              <option value="png">PNG (lossless)</option>
+            </select>
+          </div>
+        </div>
+        <div class="control-row">
+          <label class="checkbox"><input type="checkbox" id="resizeToggle"> Cap longest side at 1920px</label>
+        </div>
+      </div>
+
+    </div>
+
+    <section id="results" hidden style="margin-top:34px;">
+      <div class="results-head">
+        <h2 class="display display--xs">In the press</h2>
+        <div class="results-actions">
+          <span id="totalSaved" class="saved-badge" hidden></span>
+          <button class="btn btn--ghost" id="clearAll">Clear all</button>
+          <button class="btn btn--accent" id="downloadAll">Download all (.zip)</button>
+        </div>
+      </div>
+      <ul class="file-list" id="fileList"></ul>
+    </section>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p>Toolbox &middot; Image Compressor runs entirely in your browser.</p></div>
+</footer>
+
+<script src="../assets/js/image-compressor.js" defer></script>
+</body>
+</html>

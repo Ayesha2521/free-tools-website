@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Builder — Toolbox</title>
+<meta name="description" content="Fill a form, watch a clean resume update live, save it as a PDF. Free, private, runs in your browser.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>:root{ --accent: var(--bin-resume); }</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark" aria-hidden="true"></span>Toolbox</a>
+    <nav class="site-nav" aria-label="Primary"><a href="../index.html#tools">All tools</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap tool-hero">
+    <a class="back-link" href="../index.html">&larr; Back to the board</a>
+    <p class="bin-tag" style="margin-top:14px;">Bin 07 &middot; Career</p>
+    <h1 class="display display--sm">Resume Builder</h1>
+    <p class="lede">Fill in the form on the left, watch the resume update on the right, then save it as a PDF whenever it looks right.</p>
+  </section>
+
+  <section class="wrap tool-body">
+    <div class="tool-grid">
+      <div>
+        <div class="panel">
+          <h3 class="display display--xs">Basics</h3>
+          <div class="field-row">
+            <div class="field"><label for="rName">Full name</label><input type="text" id="rName" placeholder="Aisha Khan"></div>
+            <div class="field"><label for="rTitle">Job title</label><input type="text" id="rTitle" placeholder="Frontend Developer"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="rEmail">Email</label><input type="text" id="rEmail" placeholder="aisha@example.com"></div>
+            <div class="field"><label for="rPhone">Phone</label><input type="text" id="rPhone" placeholder="+92 300 1234567"></div>
+          </div>
+          <div class="field"><label for="rLocation">Location</label><input type="text" id="rLocation" placeholder="Rawalpindi, Pakistan"></div>
+          <div class="field"><label for="rSummary">Summary</label><textarea id="rSummary" rows="3" placeholder="A short line about who you are and what you're looking for."></textarea></div>
+          <div class="field"><label for="rSkills">Skills (comma separated)</label><input type="text" id="rSkills" placeholder="HTML, CSS, JavaScript, Git"></div>
+        </div>
+
+        <div class="panel" style="margin-top:18px;">
+          <h3 class="display display--xs">Experience</h3>
+          <div id="expList"></div>
+          <button type="button" class="add-item-btn" id="addExp">+ Add experience</button>
+        </div>
+
+        <div class="panel" style="margin-top:18px;">
+          <h3 class="display display--xs">Education</h3>
+          <div id="eduList"></div>
+          <button type="button" class="add-item-btn" id="addEdu">+ Add education</button>
+        </div>
+
+        <button class="btn btn--accent" id="downloadBtn" style="width:100%;margin-top:18px;">Save as PDF</button>
+        <p class="hint" style="text-align:center;">Opens your browser's print dialog — choose "Save as PDF" as the destination.</p>
+      </div>
+
+      <div class="preview-sticky">
+        <div class="doc-page" id="printArea">
+          <p class="r-name" id="pName">Your Name</p>
+          <p class="r-title" id="pTitle">Job title</p>
+          <div class="r-contact" id="pContact"></div>
+
+          <div class="r-section" id="summarySection">
+            <h4>Summary</h4>
+            <p id="pSummary" class="r-empty">Your summary will appear here.</p>
+          </div>
+
+          <div class="r-section">
+            <h4>Experience</h4>
+            <div id="pExp"><p class="r-empty">Add a role to see it here.</p></div>
+          </div>
+
+          <div class="r-section">
+            <h4>Education</h4>
+            <div id="pEdu"><p class="r-empty">Add a school to see it here.</p></div>
+          </div>
+
+          <div class="r-section">
+            <h4>Skills</h4>
+            <div class="r-skills" id="pSkills"><span class="r-empty">List your skills above.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="printClone" aria-hidden="true"></div>
+
+<footer class="site-footer">
+  <div class="wrap"><p>Toolbox &middot; Resume Builder keeps everything in your browser tab.</p></div>
+</footer>
+
+<script src="../assets/js/resume-builder.js" defer></script>
+</body>
+</html>

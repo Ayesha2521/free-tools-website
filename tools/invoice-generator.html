@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice Generator — Toolbox</title>
+<meta name="description" content="Build a clean, print-ready invoice with automatic totals. Free, private, runs in your browser.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>:root{ --accent: var(--bin-invoice); }</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark" aria-hidden="true"></span>Toolbox</a>
+    <nav class="site-nav" aria-label="Primary"><a href="../index.html#tools">All tools</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap tool-hero">
+    <a class="back-link" href="../index.html">&larr; Back to the board</a>
+    <p class="bin-tag" style="margin-top:14px;">Bin 08 &middot; Business</p>
+    <h1 class="display display--sm">Invoice Generator</h1>
+    <p class="lede">Add your line items, set a tax rate, and get a clean invoice with the totals worked out for you.</p>
+  </section>
+
+  <section class="wrap tool-body">
+    <div class="tool-grid">
+      <div>
+        <div class="panel">
+          <h3 class="display display--xs">Details</h3>
+          <div class="field-row">
+            <div class="field"><label for="invNumber">Invoice #</label><input type="text" id="invNumber" placeholder="INV-0001"></div>
+            <div class="field"><label for="invDate">Date</label><input type="date" id="invDate"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="fromInfo">From</label><textarea id="fromInfo" rows="3" placeholder="Your business name&#10;Address&#10;Email"></textarea></div>
+            <div class="field"><label for="toInfo">Bill to</label><textarea id="toInfo" rows="3" placeholder="Client name&#10;Address&#10;Email"></textarea></div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:18px;">
+          <h3 class="display display--xs">Line items</h3>
+          <div class="line-headers">
+            <span>Description</span><span>Qty</span><span>Price</span><span>Amount</span><span></span>
+          </div>
+          <div id="lineItems"></div>
+          <button type="button" class="add-item-btn" id="addLine">+ Add line item</button>
+
+          <div class="field-row" style="margin-top:18px;">
+            <div class="field"><label for="taxRate">Tax rate (%)</label><input type="number" id="taxRate" value="0" min="0" step="0.1"></div>
+            <div class="field"><label for="currency">Currency symbol</label><input type="text" id="currency" value="$" maxlength="3"></div>
+          </div>
+          <div class="field"><label for="invNotes">Notes (optional)</label><textarea id="invNotes" rows="2" placeholder="Payment terms, bank details, thank-you note…"></textarea></div>
+        </div>
+
+        <button class="btn btn--accent" id="downloadBtn" style="width:100%;margin-top:18px;">Save as PDF</button>
+        <p class="hint" style="text-align:center;">Opens your browser's print dialog — choose "Save as PDF" as the destination.</p>
+      </div>
+
+      <div class="preview-sticky">
+        <div class="doc-page" id="printArea">
+          <div class="inv-head">
+            <div class="inv-title">Invoice</div>
+            <div class="inv-meta">
+              <div id="pInvNumber">INV-0001</div>
+              <div id="pInvDate">—</div>
+            </div>
+          </div>
+          <div class="inv-parties">
+            <div><h5>From</h5><p id="pFrom" class="r-empty">Your business details</p></div>
+            <div><h5>Bill to</h5><p id="pTo" class="r-empty">Client details</p></div>
+          </div>
+          <table class="inv-table">
+            <thead><tr><th>Description</th><th class="num">Qty</th><th class="num">Price</th><th class="num">Amount</th></tr></thead>
+            <tbody id="pLines"><tr><td colspan="4" class="r-empty">Add a line item to see it here.</td></tr></tbody>
+          </table>
+          <div class="inv-totals">
+            <div><span>Subtotal</span><span id="pSubtotal">$0.00</span></div>
+            <div><span>Tax</span><span id="pTax">$0.00</span></div>
+            <div class="grand"><span>Total</span><span id="pTotal">$0.00</span></div>
+          </div>
+          <p class="inv-notes" id="pNotes"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="printClone" aria-hidden="true"></div>
+
+<footer class="site-footer">
+  <div class="wrap"><p>Toolbox &middot; Invoice Generator keeps everything in your browser tab.</p></div>
+</footer>
+
+<script src="../assets/js/invoice-generator.js" defer></script>
+</body>
+</html>

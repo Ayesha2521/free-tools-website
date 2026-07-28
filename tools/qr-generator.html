@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Generator — Toolbox</title>
+<meta name="description" content="Generate a QR code from a link, plain text or Wi-Fi login, right in your browser.">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>:root{ --accent: var(--bin-qr); }</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html"><span class="logo-mark" aria-hidden="true"></span>Toolbox</a>
+    <nav class="site-nav" aria-label="Primary"><a href="../index.html#tools">All tools</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap tool-hero">
+    <a class="back-link" href="../index.html">&larr; Back to the board</a>
+    <p class="bin-tag" style="margin-top:14px;">Bin 03 &middot; Sharing</p>
+    <h1 class="display display--sm">QR Code Generator</h1>
+    <p class="lede">Turn a link, a message or a Wi-Fi password into a code anyone can scan.</p>
+  </section>
+
+  <section class="wrap tool-body">
+    <div class="tool-grid">
+      <div class="panel">
+        <div class="tabs" role="tablist">
+          <button class="tab-btn is-active" data-tab="link" role="tab">Link</button>
+          <button class="tab-btn" data-tab="text" role="tab">Text</button>
+          <button class="tab-btn" data-tab="wifi" role="tab">Wi-Fi</button>
+          <button class="tab-btn" data-tab="email" role="tab">Email</button>
+        </div>
+
+        <div class="tab-panel is-active" data-panel="link">
+          <div class="field">
+            <label for="linkInput">Website link</label>
+            <input type="text" id="linkInput" placeholder="https://example.com">
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="text">
+          <div class="field">
+            <label for="textInput">Text or message</label>
+            <textarea id="textInput" rows="4" placeholder="Anything you want the scanner to read"></textarea>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="wifi">
+          <div class="field-row">
+            <div class="field">
+              <label for="wifiSsid">Network name (SSID)</label>
+              <input type="text" id="wifiSsid" placeholder="Home Wi-Fi">
+            </div>
+            <div class="field">
+              <label for="wifiPass">Password</label>
+              <input type="text" id="wifiPass" placeholder="••••••••">
+            </div>
+          </div>
+          <div class="field">
+            <label for="wifiEnc">Security</label>
+            <select id="wifiEnc">
+              <option value="WPA">WPA / WPA2</option>
+              <option value="WEP">WEP</option>
+              <option value="nopass">None (open network)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="email">
+          <div class="field">
+            <label for="emailTo">Email address</label>
+            <input type="text" id="emailTo" placeholder="name@example.com">
+          </div>
+          <div class="field">
+            <label for="emailSubject">Subject (optional)</label>
+            <input type="text" id="emailSubject" placeholder="">
+          </div>
+        </div>
+
+        <div class="color-fields">
+          <div class="field">
+            <label for="fgColor">Code color</label>
+            <input type="color" id="fgColor" value="#20242b">
+          </div>
+          <div class="field">
+            <label for="bgColor">Background</label>
+            <input type="color" id="bgColor" value="#ffffff">
+          </div>
+        </div>
+
+        <button class="btn btn--accent" id="generateBtn" style="width:100%;">Generate QR code</button>
+      </div>
+
+      <div class="panel qr-preview">
+        <div id="qrCanvasWrap">
+          <span class="hint" id="qrPlaceholder">Your code will appear here</span>
+        </div>
+        <button class="btn btn--ghost" id="downloadQr" disabled>Download PNG</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap"><p>Toolbox &middot; QR codes are generated locally, nothing is sent anywhere.</p></div>
+</footer>
+
+<script src="../assets/js/qr-generator.js" defer></script>
+</body>
+</html>
