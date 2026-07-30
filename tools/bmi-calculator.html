@@ -1,102 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BMI Calculator — Toolbox</title>
-<meta name="description" content="Work out body mass index from height and weight, metric or imperial.">
-<link rel="stylesheet" href="../assets/css/style.css">
-<style>:root{ --accent: var(--bin-bmi); }</style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SJSGZB5MN9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-SJSGZB5MN9');
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator - Check Your Body Mass Index Online</title>
+  <meta name="description"
+    content="Free BMI Calculator to calculate your Body Mass Index online. Check if your weight is healthy using metric or imperial units. Fast, accurate and privacy-friendly.">
+
+  <meta name="keywords"
+    content="BMI calculator, body mass index calculator, healthy weight calculator, BMI online, free BMI calculator">
+
+  <meta name="author" content="Free Tools Website">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+  <link rel="canonical" href="https://free-tools-website-seven.vercel.app/tools/bmi-calculator.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    :root {
+      --accent: var(--bin-bmi);
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJSGZB5MN9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-SJSGZB5MN9');
+  </script>
+  <meta property="og:title" content="Free BMI Calculator">
+
+  <meta property="og:description"
+    content="Calculate your Body Mass Index online instantly using metric or imperial units.">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:url" content="https://free-tools-website-seven.vercel.app/tools/bmi-calculator.html">
+
+  <meta property="og:image" content="https://free-tools-website-seven.vercel.app/assets/images/preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="Free BMI Calculator">
+
+  <meta name="twitter:description" content="Calculate BMI online for free.">
+
+  <meta name="twitter:image" content="https://free-tools-website-seven.vercel.app/assets/images/preview.png">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebApplication",
+ "name":"BMI Calculator",
+ "url":"https://free-tools-website-seven.vercel.app/tools/bmi-calculator.html",
+ "applicationCategory":"HealthApplication",
+ "operatingSystem":"Any",
+ "offers":{
+   "@type":"Offer",
+   "price":"0"
+ }
+}
 </script>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="wrap">
-    <a class="logo" href="../index.html"><span class="logo-mark" aria-hidden="true"></span>Toolbox</a>
-    <nav class="site-nav" aria-label="Primary"><a href="../index.html#tools">All tools</a></nav>
-  </div>
-</header>
-
-<main>
-  <section class="wrap tool-hero">
-    <a class="back-link" href="../index.html">&larr; Back to the board</a>
-    <p class="bin-tag" style="margin-top:14px;">Bin 05 &middot; Health</p>
-    <h1 class="display display--sm">BMI Calculator</h1>
-    <p class="lede">Enter your height and weight to see your body mass index and where it falls on the scale.</p>
-  </section>
-
-  <section class="wrap tool-body">
-    <div class="tool-grid">
-      <div class="panel">
-        <div class="field">
-          <label for="heightUnit">Height unit</label>
-          <select id="heightUnit">
-            <option value="cm">Centimetres (cm)</option>
-            <option value="ftin">Feet &amp; inches</option>
-          </select>
-        </div>
-
-        <div class="field" data-height-panel="cm">
-          <label for="heightCm">Height (cm)</label>
-          <input type="number" id="heightCm" placeholder="170" min="0">
-        </div>
-        <div class="field-row" data-height-panel="ftin" hidden>
-          <div class="field">
-            <label for="heightFt">Height — feet</label>
-            <input type="number" id="heightFt" placeholder="5" min="0">
-          </div>
-          <div class="field">
-            <label for="heightIn">Inches</label>
-            <input type="number" id="heightIn" placeholder="7" min="0" max="11">
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="weightUnit">Weight unit</label>
-          <select id="weightUnit">
-            <option value="kg">Kilograms (kg)</option>
-            <option value="lb">Pounds (lb)</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="weightValue" id="weightLabel">Weight (kg)</label>
-          <input type="number" id="weightValue" placeholder="65" min="0">
-        </div>
-
-        <button class="btn btn--accent" id="calcBtn" style="width:100%;">Calculate BMI</button>
-        <p class="hint" id="errorMsg" style="color:var(--bin-age);"></p>
-      </div>
-
-      <div class="panel">
-        <div class="stat-hero">
-          <div class="stat-value" id="bmiValue">—</div>
-          <div class="stat-label" id="bmiCategory">Enter your details</div>
-        </div>
-        <div class="bmi-scale">
-          <div class="bmi-bar"><div class="bmi-marker" id="bmiMarker" style="left:0%;"></div></div>
-          <div class="bmi-labels">
-            <span>Under</span><span>Healthy</span><span>Over</span><span>Obese I</span><span>Obese II+</span>
-          </div>
-        </div>
-        <p class="hint" style="margin-top:18px;">BMI is a general screening tool and doesn't account for muscle mass, bone density, age or sex. Use it as a rough guide, not a diagnosis.</p>
-      </div>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../index.html"><span class="logo-mark" aria-hidden="true"></span>Toolbox</a>
+      <nav class="site-nav" aria-label="Primary"><a href="../index.html#tools">All tools</a></nav>
     </div>
-  </section>
-</main>
+  </header>
 
+  <main>
+    <section class="wrap tool-hero">
+      <a class="back-link" href="../index.html">&larr; Back to the board</a>
+      <p class="bin-tag" style="margin-top:14px;">Bin 05 &middot; Health</p>
+      <h1 class="display display--sm">BMI Calculator</h1>
+      <p class="lede">Enter your height and weight to see your body mass index and where it falls on the scale.</p>
+    </section>
+
+    <section class="wrap tool-body">
+      <div class="tool-grid">
+        <div class="panel">
+          <div class="field">
+            <label for="heightUnit">Height unit</label>
+            <select id="heightUnit">
+              <option value="cm">Centimetres (cm)</option>
+              <option value="ftin">Feet &amp; inches</option>
+            </select>
+          </div>
+
+          <div class="field" data-height-panel="cm">
+            <label for="heightCm">Height (cm)</label>
+            <input type="number" id="heightCm" placeholder="170" min="0">
+          </div>
+          <div class="field-row" data-height-panel="ftin" hidden>
+            <div class="field">
+              <label for="heightFt">Height — feet</label>
+              <input type="number" id="heightFt" placeholder="5" min="0">
+            </div>
+            <div class="field">
+              <label for="heightIn">Inches</label>
+              <input type="number" id="heightIn" placeholder="7" min="0" max="11">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="weightUnit">Weight unit</label>
+            <select id="weightUnit">
+              <option value="kg">Kilograms (kg)</option>
+              <option value="lb">Pounds (lb)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="weightValue" id="weightLabel">Weight (kg)</label>
+            <input type="number" id="weightValue" placeholder="65" min="0">
+          </div>
+
+          <button class="btn btn--accent" id="calcBtn" style="width:100%;">Calculate BMI</button>
+          <p class="hint" id="errorMsg" style="color:var(--bin-age);"></p>
+        </div>
+
+        <div class="panel">
+          <div class="stat-hero">
+            <div class="stat-value" id="bmiValue">—</div>
+            <div class="stat-label" id="bmiCategory">Enter your details</div>
+          </div>
+          <div class="bmi-scale">
+            <div class="bmi-bar">
+              <div class="bmi-marker" id="bmiMarker" style="left:0%;"></div>
+            </div>
+            <div class="bmi-labels">
+              <span>Under</span><span>Healthy</span><span>Over</span><span>Obese I</span><span>Obese II+</span>
+            </div>
+          </div>
+          <p class="hint" style="margin-top:18px;">BMI is a general screening tool and doesn't account for muscle mass,
+            bone density, age or sex. Use it as a rough guide, not a diagnosis.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <section class="related-tools">
+
+<h2>Related Tools</h2>
+
+<ul>
+
+<li><a href="age-calculator.html">Age Calculator</a></li>
+
+<li><a href="password-generator.html">Password Generator</a></li>
+
+<li><a href="resume-builder.html">Resume Builder</a></li>
+
+<li><a href="invoice-generator.html">Invoice Generator</a></li>
+
+</ul>
+
+</section>
+<section class="wrap" style="padding:60px 0;">
+
+<h2>Free BMI Calculator Online</h2>
+
+<p>
+Our free BMI Calculator helps you calculate your Body Mass Index instantly.
+Simply enter your height and weight to find out whether your weight falls
+within the healthy range. The calculator supports both metric and imperial
+units and works completely inside your browser.
+</p>
+
+<h2>Why Use Our BMI Calculator?</h2>
+
+<ul>
+
+<li>100% Free</li>
+
+<li>Fast Calculation</li>
+
+<li>Supports Metric & Imperial Units</li>
+
+<li>No Registration Required</li>
+
+<li>Privacy Friendly</li>
+
+</ul>
+
+</section>
 <footer class="site-footer">
-  <div class="wrap"><p>Toolbox &middot; BMI Calculator runs entirely in your browser.</p></div>
-</footer>
+    <div class="wrap">
+      <p>Toolbox &middot; BMI Calculator runs entirely in your browser.</p>
+    </div>
+  </footer>
 
-<script src="../assets/js/bmi-calculator.js" defer></script>
+  <script src="../assets/js/bmi-calculator.js" defer></script>
 </body>
+
 </html>

@@ -848,3 +848,20 @@ input[type="color"]{ padding: 3px; height: 42px; cursor: pointer; }
 .inv-totals div{ display: flex; justify-content: space-between; font-size: 0.88rem; padding: 5px 0; }
 .inv-totals .grand{ font-weight: 800; font-size: 1.05rem; border-top: 1px solid #e3e0d8; margin-top: 4px; padding-top: 10px; }
 .inv-notes{ margin-top: 22px; font-size: 0.82rem; color: #555; white-space: pre-line; }
+
+.footer{
+    margin-top:50px;
+    padding:30px;
+    text-align:center;
+    background:#111;
+}
+
+.footer a{
+    color:white;
+    text-decoration:none;
+    margin:0 12px;
+}
+
+.footer a:hover{
+    color:#00bfff;
+}

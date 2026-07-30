@@ -1,76 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PDF Merge — Toolbox</title>
-<meta name="description" content="Combine several PDF files into one, in your browser. Free, private, no uploads.">
-<link rel="stylesheet" href="../assets/css/style.css">
-<style>:root{ --accent: var(--bin-pdf); }</style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SJSGZB5MN9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-SJSGZB5MN9');
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free PDF Merger Online - Merge PDF Files Instantly</title>
+  <meta name="description" content="Combine several PDF files into one, in your browser. Free, private, no uploads.">
+  <meta name="keywords" content="pdf merger, merge pdf online, combine pdf files, free pdf merger, online pdf tool">
+
+  <meta name="author" content="Free Tools Website">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+  <link rel="canonical" href="https://free-tools-website-seven.vercel.app/tools/pdf-merge.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    :root {
+      --accent: var(--bin-pdf);
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJSGZB5MN9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-SJSGZB5MN9');
+  </script>
+  <meta property="og:title" content="Free PDF Merger Online">
+
+  <meta property="og:description" content="Merge multiple PDF files online for free. Fast, secure and browser-based.">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:url" content="https://free-tools-website-seven.vercel.app/tools/pdf-merge.html">
+
+  <meta property="og:image" content="https://free-tools-website-seven.vercel.app/assets/images/preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="Free PDF Merger Online">
+
+  <meta name="twitter:description" content="Combine multiple PDF files instantly without uploading them.">
+
+  <meta name="twitter:image" content="https://free-tools-website-seven.vercel.app/assets/images/preview.png">
+  <script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebApplication",
+ "name":"PDF Merger",
+ "url":"https://free-tools-website-seven.vercel.app/tools/pdf-merge.html",
+ "applicationCategory":"UtilityApplication",
+ "operatingSystem":"Any",
+ "offers":{
+   "@type":"Offer",
+   "price":"0",
+   "priceCurrency":"USD"
+ }
+}
 </script>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="wrap">
-    <a class="logo" href="../index.html"><span class="logo-mark" aria-hidden="true"></span>Toolbox</a>
-    <nav class="site-nav" aria-label="Primary"><a href="../index.html#tools">All tools</a></nav>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../index.html"><span class="logo-mark" aria-hidden="true"></span>Toolbox</a>
+      <nav class="site-nav" aria-label="Primary"><a href="../index.html#tools">All tools</a></nav>
+    </div>
+  </header>
 
-<main>
-  <section class="wrap tool-hero">
-    <a class="back-link" href="../index.html">&larr; Back to the board</a>
-    <p class="bin-tag" style="margin-top:14px;">Bin 02 &middot; Documents</p>
-    <h1 class="display display--sm">PDF Merge</h1>
-    <p class="lede">Add your PDFs, put them in order, merge into one file. Everything is processed on your device — files are never sent anywhere.</p>
-  </section>
+  <main>
+    <section class="wrap tool-hero">
+      <a class="back-link" href="../index.html">&larr; Back to the board</a>
+      <p class="bin-tag" style="margin-top:14px;">Bin 02 &middot; Documents</p>
+      <h1 class="display display--sm">PDF Merge</h1>
+      <p class="lede">Add your PDFs, put them in order, merge into one file. Everything is processed on your device —
+        files are never sent anywhere.</p>
+      <p class="hint">
+        Merge PDF files online without installing software.
+        No uploads, no registration and completely free.
+      </p>
+    </section>
 
-  <section class="wrap tool-body">
-    <div class="tool-grid">
-      <div>
-        <div class="drop-zone" id="dropZone" tabindex="0" role="button" aria-label="Drop PDF files here or press to browse">
-          <input type="file" id="fileInput" accept="application/pdf" multiple hidden>
-          <svg viewBox="0 0 24 24" style="width:56px;height:56px;margin:0 auto 10px;stroke:var(--accent);fill:none;stroke-width:1.4;">
-            <path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 16h6"/>
-          </svg>
-          <p class="drop-label">
-            <strong>Drop PDFs here</strong>
-            <span>or click to browse — add as many as you need</span>
-          </p>
+    <section class="wrap tool-body">
+      <div class="tool-grid">
+        <div>
+          <div class="drop-zone" id="dropZone" tabindex="0" role="button"
+            aria-label="Drop PDF files here or press to browse">
+            <input type="file" id="fileInput" accept="application/pdf" multiple hidden>
+            <svg viewBox="0 0 24 24"
+              style="width:56px;height:56px;margin:0 auto 10px;stroke:var(--accent);fill:none;stroke-width:1.4;">
+              <path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" />
+              <path d="M14 3v5h5" />
+              <path d="M9 13h6M9 16h6" />
+            </svg>
+            <p class="drop-label">
+              <strong>Drop PDFs here</strong>
+              <span>or click to browse — add as many as you need</span>
+            </p>
+          </div>
+        </div>
+        <div class="panel">
+          <h2 class="display display--xs" style="margin-bottom:10px;">Order</h2>
+          <p class="hint" style="margin-top:0;">Files merge top to bottom. Use the arrows to reorder before merging.</p>
+          <button class="btn btn--accent" id="mergeBtn" style="width:100%;margin-top:8px;" disabled>Merge PDFs</button>
         </div>
       </div>
-      <div class="panel">
-        <h2 class="display display--xs" style="margin-bottom:10px;">Order</h2>
-        <p class="hint" style="margin-top:0;">Files merge top to bottom. Use the arrows to reorder before merging.</p>
-        <button class="btn btn--accent" id="mergeBtn" style="width:100%;margin-top:8px;" disabled>Merge PDFs</button>
-      </div>
-    </div>
 
-    <section style="margin-top:34px;">
-      <div class="results-head">
-        <h2 class="display display--xs">Files to merge</h2>
-        <button class="btn btn--ghost" id="clearAll">Clear all</button>
-      </div>
-      <ul class="file-list" id="fileList">
-        <li class="empty-state" id="emptyState">No PDFs added yet.</li>
-      </ul>
+      <section style="margin-top:34px;">
+        <div class="results-head">
+          <h2 class="display display--xs">Files to merge</h2>
+          <button class="btn btn--ghost" id="clearAll">Clear all</button>
+        </div>
+        <ul class="file-list" id="fileList">
+          <li class="empty-state" id="emptyState">No PDFs added yet.</li>
+        </ul>
+      </section>
     </section>
+  </main>
+  <section class="related-tools">
+
+    <h2>Related Tools</h2>
+
+    <ul>
+
+      <li><a href="image-compressor.html">Image Compressor</a></li>
+
+      <li><a href="qr-generator.html">QR Code Generator</a></li>
+
+      <li><a href="resume-builder.html">Resume Builder</a></li>
+
+      <li><a href="invoice-generator.html">Invoice Generator</a></li>
+
+    </ul>
+
   </section>
-</main>
+  <section class="wrap" style="padding:60px 0;">
 
-<footer class="site-footer">
-  <div class="wrap"><p>Toolbox &middot; PDF Merge runs entirely in your browser using pdf-lib.</p></div>
-</footer>
+    <h2>Free PDF Merger Online</h2>
 
-<script src="../assets/js/pdf-merge.js" defer></script>
+    <p>
+      Merge multiple PDF documents into one PDF instantly using our free online PDF Merger.
+      Everything works directly inside your browser without uploading files.
+      Your documents remain private and secure throughout the process.
+    </p>
+
+    <h2>Features</h2>
+
+    <ul>
+
+      <li>Merge Unlimited PDF Files</li>
+
+      <li>100% Browser Based</li>
+
+      <li>No Registration Required</li>
+
+      <li>Privacy Friendly</li>
+
+      <li>Fast Processing</li>
+
+      <li>Works on Desktop & Mobile</li>
+
+    </ul>
+
+  </section>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>
+        © 2026 Free Tools Website |
+        Free PDF Merger Online |
+        Fast • Secure • Browser Based
+      </p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/pdf-merge.js" defer></script>
 </body>
+
 </html>

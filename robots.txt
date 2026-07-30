@@ -1,4 +1,5 @@
 User-agent: *
+
 Allow: /
 
 Sitemap: https://free-tools-website-seven.vercel.app/sitemap.xml

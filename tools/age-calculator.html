@@ -1,76 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Age Calculator — Toolbox</title>
-<meta name="description" content="Calculate exact age in years, months and days from a birth date.">
-<link rel="stylesheet" href="../assets/css/style.css">
-<style>:root{ --accent: var(--bin-age); }</style>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SJSGZB5MN9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator - Calculate Your Exact Age Online</title>
+  <meta name="description" content="Calculate exact age in years, months and days from a birth date.">
+  <meta name="keywords"
+    content="age calculator, calculate age online, exact age calculator, birthday calculator, age in years months days">
 
-  gtag('config', 'G-SJSGZB5MN9');
+  <meta name="author" content="Free Tools Website">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+
+  <link rel="canonical" href="https://free-tools-website-seven.vercel.app/tools/age-calculator.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    :root {
+      --accent: var(--bin-age);
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJSGZB5MN9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-SJSGZB5MN9');
+  </script>
+  <meta property="og:title" content="Free Age Calculator Online">
+
+  <meta property="og:description" content="Calculate your exact age in years, months and days instantly.">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:url" content="https://free-tools-website-seven.vercel.app/tools/age-calculator.html">
+
+  <meta property="og:image" content="https://free-tools-website-seven.vercel.app/assets/images/preview.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="twitter:title" content="Free Age Calculator Online">
+
+  <meta name="twitter:description" content="Calculate your exact age online for free.">
+
+  <meta name="twitter:image" content="https://free-tools-website-seven.vercel.app/assets/images/preview.png">
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Age Calculator",
+  "url":"https://free-tools-website-seven.vercel.app/tools/age-calculator.html",
+  "applicationCategory":"UtilityApplication",
+  "operatingSystem":"Any",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"USD"
+  }
+}
 </script>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="wrap">
-    <a class="logo" href="../index.html"><span class="logo-mark" aria-hidden="true"></span>Toolbox</a>
-    <nav class="site-nav" aria-label="Primary"><a href="../index.html#tools">All tools</a></nav>
-  </div>
-</header>
-
-<main>
-  <section class="wrap tool-hero">
-    <a class="back-link" href="../index.html">&larr; Back to the board</a>
-    <p class="bin-tag" style="margin-top:14px;">Bin 04 &middot; Everyday</p>
-    <h1 class="display display--sm">Age Calculator</h1>
-    <p class="lede">Pick a birth date and an as-of date to get an exact age, plus a few fun totals.</p>
-  </section>
-
-  <section class="wrap tool-body">
-    <div class="tool-grid">
-      <div class="panel">
-        <div class="field">
-          <label for="birthDate">Date of birth</label>
-          <input type="date" id="birthDate">
-        </div>
-        <div class="field">
-          <label for="asOfDate">Calculate age as of</label>
-          <input type="date" id="asOfDate">
-        </div>
-        <button class="btn btn--accent" id="calcBtn" style="width:100%;">Calculate age</button>
-        <p class="hint" id="errorMsg" style="color:var(--bin-age);"></p>
-      </div>
-
-      <div class="panel">
-        <div class="stat-hero">
-          <div class="stat-value" id="mainStat">—</div>
-          <div class="stat-label" id="mainLabel">years old</div>
-        </div>
-        <div class="stat-grid">
-          <div class="stat-tile"><div class="n" id="statMonths">—</div><div class="l">Total months</div></div>
-          <div class="stat-tile"><div class="n" id="statWeeks">—</div><div class="l">Total weeks</div></div>
-          <div class="stat-tile"><div class="n" id="statDays">—</div><div class="l">Total days</div></div>
-        </div>
-        <p class="hint" id="nextBirthday" style="text-align:center;margin-top:18px;"></p>
-      </div>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../index.html"><span class="logo-mark" aria-hidden="true"></span>Toolbox</a>
+      <nav class="site-nav" aria-label="Primary"><a href="../index.html#tools">All tools</a></nav>
     </div>
+  </header>
+
+  <main>
+    <section class="wrap tool-hero">
+      <a class="back-link" href="../index.html">&larr; Back to the board</a>
+      <p class="bin-tag" style="margin-top:14px;">Bin 04 &middot; Everyday</p>
+      <h1 class="display display--sm">Age Calculator</h1>
+      <p class="lede">
+        Calculate your exact age in years, months, weeks and days instantly.
+        Free, fast and completely browser-based with no registration required.
+      </p>
+    </section>
+
+    <section class="wrap tool-body">
+      <div class="tool-grid">
+        <div class="panel">
+          <div class="field">
+            <label for="birthDate">Date of birth</label>
+            <input type="date" id="birthDate">
+          </div>
+          <div class="field">
+            <label for="asOfDate">Calculate age as of</label>
+            <input type="date" id="asOfDate">
+          </div>
+          <button class="btn btn--accent" id="calcBtn" style="width:100%;">Calculate age</button>
+          <p class="hint" id="errorMsg" style="color:var(--bin-age);"></p>
+        </div>
+
+        <div class="panel">
+          <div class="stat-hero">
+            <div class="stat-value" id="mainStat">—</div>
+            <div class="stat-label" id="mainLabel">years old</div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat-tile">
+              <div class="n" id="statMonths">—</div>
+              <div class="l">Total months</div>
+            </div>
+            <div class="stat-tile">
+              <div class="n" id="statWeeks">—</div>
+              <div class="l">Total weeks</div>
+            </div>
+            <div class="stat-tile">
+              <div class="n" id="statDays">—</div>
+              <div class="l">Total days</div>
+            </div>
+          </div>
+          <p class="hint" id="nextBirthday" style="text-align:center;margin-top:18px;"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="related-tools">
+
+    <h2>Related Tools</h2>
+
+    <ul>
+
+      <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+
+      <li><a href="password-generator.html">Password Generator</a></li>
+
+      <li><a href="resume-builder.html">Resume Builder</a></li>
+
+      <li><a href="invoice-generator.html">Invoice Generator</a></li>
+
+    </ul>
+
   </section>
-</main>
+  <section class="wrap" style="padding:60px 0;">
 
-<footer class="site-footer">
-  <div class="wrap"><p>Toolbox &middot; Age Calculator runs entirely in your browser.</p></div>
-</footer>
+    <h2>Free Age Calculator Online</h2>
 
-<script src="../assets/js/age-calculator.js" defer></script>
+    <p>
+      Use our free Age Calculator to calculate your exact age in years,
+      months, weeks and days. Simply enter your date of birth and get
+      accurate results instantly without creating an account or installing software.
+      Everything works securely in your browser.
+    </p>
+
+    <h2>Features</h2>
+
+    <ul>
+
+      <li>Calculate Exact Age</li>
+
+      <li>Years, Months, Weeks & Days</li>
+
+      <li>Next Birthday Calculation</li>
+
+      <li>100% Free</li>
+
+      <li>Privacy Friendly</li>
+
+      <li>Works on Mobile & Desktop</li>
+
+    </ul>
+
+  </section>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>
+        © 2026 Free Tools Website |
+        Free Age Calculator Online |
+        Fast • Secure • Browser Based
+      </p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/age-calculator.js" defer></script>
 </body>
+
 </html>
