@@ -902,3 +902,32 @@ input[type="color"]{ padding: 3px; height: 42px; cursor: pointer; }
 .seo-content li {
   margin-bottom: 8px;
 }
+
+.related-tools {
+  display: block !important;
+  width: 100% !important;
+  max-width: 1200px;
+  margin: 40px auto !important;
+  clear: both;
+}
+
+.related-tools h2 {
+  margin-bottom: 20px;
+}
+
+.related-tools ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.related-tools li {
+  display: block;
+}
+
+.related-tools a {
+  display: inline-block;
+}
