@@ -865,3 +865,40 @@ input[type="color"]{ padding: 3px; height: 42px; cursor: pointer; }
 .footer a:hover{
     color:#00bfff;
 }
+
+/* SEO Content Sections */
+.seo-content {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 35px;
+  background: var(--surface, #ffffff);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.seo-content h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 28px;
+}
+
+.seo-content h3 {
+  margin-top: 25px;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.seo-content p {
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.seo-content ol {
+  padding-left: 25px;
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+.seo-content li {
+  margin-bottom: 8px;
+}
